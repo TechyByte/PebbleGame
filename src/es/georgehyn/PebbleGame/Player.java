@@ -22,10 +22,11 @@ public class Player implements Runnable {
         for (int i = 0; i < 10; ++i) {
             hand.add(bpc.pebblePlease(start));
         }
-        while (score() != 100) {
+        while (score() != 100) { // player has not yet won
             bpc.discard(hand.remove(random.nextInt(hand.size())));
             hand.add(bpc.pebblePlease(Origin.getRandomOrigin()));
         }
+        // player has won
     }
 
     public Player(BagPairCollection parentBpc) {
